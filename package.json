@@ -16,6 +16,8 @@
   },
   "dependencies": {
     "jquery": "^3.7.1",
-    "three-mtl-loader": "^1.0.2"
+    "three": "^0.169.0",
+    "three-mtl-loader": "^1.0.2",
+    "typed.js": "^2.1.0"
   }
 }

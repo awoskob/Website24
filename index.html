@@ -3,7 +3,7 @@
     <title>Alexander Woskob</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel='stylesheet' href='src\css\homepage.css'>
+    <link rel='stylesheet' href='src/css/homepage.css'>
     <link href="https://fonts.googleapis.com/css?family=Audiowide|DM+Serif+Display|Fascinate+Inline|Orbitron|Play|Press+Start+2P|Rajdhani|Russo+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Righteous|Saira&display=swap" rel="stylesheet">
 
@@ -45,7 +45,7 @@
     <!-- <script src="/three/js/utils/SceneUtils.js"></script>
     <script src="particlejs/particles.js"></script>  -->
     
-    <script src="src\typed\typed.min.js"></script>
+    <!-- <script type="module" src="src/typed/typed.min"></script> -->
 
     <video id="stock1" width="400" autoplay loop style="display:none">
       <source src="src/videos10/HomeSolo2.mp4" type="video/mp4">
@@ -135,8 +135,9 @@
             <h2> exploring </h2>
             <h2>
               <span class="typing text-primary"></span>.</h2>
-            <script>
+            <script type="module">
                 // Can also be included with a regular script tag
+                import Typed from 'typed.js';
                 var options = {
                   strings: ["Interactive Media", "Sound Design", "Game Design",
                   "Composition", "Visual Art"],
@@ -225,7 +226,7 @@
         <canvas id="layoutcanvas5" style="z-index:1"></canvas>
         <canvas id="layoutcanvas6" style="z-index:1"></canvas>
         <div id="tvlayoutcanvas"></div>
-        <script type="module" src="src\javascripts\tvlayouthome"></script>
+        <script type="module" src="src/javascripts/tvlayouthome.js"></script>
         <div class="container" id="work-container">
           <div class="row">
             <div class="col-md-4">

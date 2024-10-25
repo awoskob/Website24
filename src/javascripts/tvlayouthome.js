@@ -221,7 +221,7 @@ function loadTVs() {
   var index = 0;
   var rotx = 0.3;
   var loader = new OBJLoader();
-  loader.load('/src/models/yellowtvscreen.obj', function(object) {
+  loader.load('src/models/yellowtvscreen.obj', function(object) {
     screenGroup = new THREE.Object3D();
     tvGroup = new THREE.Object3D();
     var index = 0;
