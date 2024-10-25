@@ -16,6 +16,11 @@ import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer
 
 import yellowtvscreen from '/src/models/yellowtvscreen.obj';
 import Hammer03mtl from '/src/models/Hammer03.mtl';
+import Hammer03OBJ from '/src/models/Hammer03.obj';
+import bluettvMTL from '/src/models/bluetv.mtl';
+import bluetvOBJ from '/src/models/bluetv.obj';
+import yellowtvMTL from '/src/models/yellowtv.mtl';
+import yellowtvOBJ from '/src/models/yellowtv.obj';
 
 
 //import { CSS3DRenderer } from 'three-css3drenderer';
@@ -798,7 +803,7 @@ function initHammerMesh() {
       materials.preload();
       var loader = new OBJLoader();
       loader.setMaterials(materials)
-      loader.load('src/models/Hammer03.obj', function(geometry, materials) {
+      loader.load(Hammer03OBJ, function(geometry, materials) {
           hammerMesh = geometry;
           hammerMesh.scale.x = hammerMesh.scale.y = hammerMesh.scale.z = .15;
           hammerMesh.position.y = -10;
@@ -814,11 +819,11 @@ function initHammerMesh() {
 
 function initBlueTVMesh(zpos, ypos, xpos, roty, rotx, tvscalex, tvscaley) {
   var mtlLoader = new MTLLoader();
-  mtlLoader.load('src/models/bluetv.mtl', function (materials) {
+  mtlLoader.load(bluettvMTL, function (materials) {
       materials.preload();
       var loader = new OBJLoader();
       loader.setMaterials(materials)
-      loader.load('src/models/bluetv.obj', function(geometry, materials) {
+      loader.load(bluetvOBJ, function(geometry, materials) {
           tvMesh = geometry;
           tvMesh.position.z = zpos;
           tvMesh.position.y = ypos;
@@ -837,12 +842,12 @@ function initBlueTVMesh(zpos, ypos, xpos, roty, rotx, tvscalex, tvscaley) {
 
 function initYellowTVMesh(zpos, ypos, xpos, roty, rotx, tvscalex, tvscaley) {
   var mtlLoader = new MTLLoader();
-  mtlLoader.load('src/models/yellowtv.mtl', function (materials) {
+  mtlLoader.load(yellowtvMTL, function (materials) {
       tvGroup = new THREE.Object3D();
       materials.preload();
       var loader = new OBJLoader();
       loader.setMaterials(materials)
-      loader.load('src/models/yellowtv.obj', function(geometry, materials) {
+      loader.load(yellowtvOBJ, function(geometry, materials) {
           tvMesh = geometry;
           tvMesh.position.z = zpos;
           tvMesh.position.y = ypos;
