@@ -21,6 +21,7 @@ import bluettvMTL from '/src/models/bluetv.mtl';
 import bluetvOBJ from '/src/models/bluetv.obj';
 import yellowtvMTL from '/src/models/yellowtv.mtl';
 import yellowtvOBJ from '/src/models/yellowtv.obj';
+import Hammer_tex from '/src/models/Hammer_tex.jpg';
 
 
 //import { CSS3DRenderer } from 'three-css3drenderer';
