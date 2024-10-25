@@ -1,0 +1,502 @@
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:300,600');
+
+html{
+    overflow: scroll;
+}
+
+:root {
+  --background: #000000CC;
+  --highlight: #008E9B;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* navigation styles start here */
+
+header {
+  background: var(--background);
+  text-align: center;
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  font-family: 'Press Start 2P', cursive;
+  font-size:0.7rem;
+  text-transform: uppercase;
+}
+
+/* changed this from the tutorial video to
+   allow it to gain focus, making it tabbable */
+.nav-toggle {
+  position: absolute !important;
+  top: -9999px !important;
+  left: -9999px !important;
+}
+
+.nav-toggle:focus ~ .nav-toggle-label {
+  outline: 3px solid rgba(lightblue, .75);
+}
+
+.nav-toggle-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: 1em;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  display: block;
+  background: white;
+  height: 2px;
+  width: 2em;
+  border-radius: 2px;
+  position: relative;
+}
+
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  content: '';
+  position: absolute;
+}
+
+.nav-toggle-label span::before {
+  bottom: 7px;
+}
+
+.nav-toggle-label span::after {
+  top: 7px;
+}
+
+.textlogo {
+  grid-column: 2 / 3;
+  color: white;
+  margin-left: 1em;
+}
+
+nav {
+  position: absolute;
+  text-align: left;
+  top: 100%;
+  left: 0;
+  background: var(--background);
+  width: 100%;
+  transform: scale(1, 0);
+  transform-origin: top;
+  transition: transform 400ms ease-in-out;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  margin-bottom: 1em;
+  margin-left: 1em;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 150ms ease-in-out;
+}
+
+nav a:hover {
+  color: var(--highlight);
+}
+
+.nav-toggle:checked ~ nav {
+  transform: scale(1,1);
+}
+
+.nav-toggle:checked ~ nav a {
+  opacity: 1;
+  transition: opacity 250ms ease-in-out 250ms;
+  color: white;
+}
+
+@media screen and (min-width: 1000px) {
+  .nav-toggle-label {
+    display: none;
+  }
+
+  header {
+      display: grid;
+      grid-template-columns: 0.1fr auto minmax(515px, 4fr) 0.2fr;
+    }
+  /*
+  .logo {
+      grid-column: 2 / 3;
+    }
+  */
+  .logo {
+      grid-column: 0 / 1;
+      display: flex;
+      align-items: center;
+      margin-top: 3px;
+      margin-left: 3em;
+  }
+
+  .textlogo {
+    grid-column: 2 / 3;
+    color: white;
+    margin-left: 1em;
+  }
+
+  nav {
+
+      /* the following lines are not from my video, but add Edge support */
+      position: relative;
+      text-align: left;
+      transition: none;
+      transform: scale(1,1);
+      background: none;
+      top: initial;
+      left: initial;
+      /* end Edge support stuff */
+
+      grid-column: 3 / 4;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    nav ul {
+      display: flex;
+    }
+
+    nav li {
+      margin-left: 1em;
+      margin-bottom: 0em;
+    }
+
+    nav a {
+      opacity: 1;
+      position: relative;
+    }
+
+    nav a::before {
+      content: '';
+      display: block;
+      height: 5px;
+      background: var(--highlight);;
+      position: absolute;
+      top: -.75em;
+      left: 0;
+      right: 0;
+      transform: scale(0, 1);
+      transition: transform ease-in-out 250ms;
+    }
+
+    nav a:hover::before {
+      transform: scale(1,1);
+    }
+}
+
+body {
+	margin: 0 auto;
+	font-family: 'Work Sans', sans-serif;
+	font-weight: 400;
+  overflow: hidden;
+  background-color: black;
+}
+
+#particleCanvas {
+  margin: 0 auto;
+  text-align: center;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: -90;
+  width: 100%;
+  height: 100%;
+}
+
+#particles-js {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  margin: 0 auto;
+
+}
+
+/*
+.content {
+  height: vh;
+  background-image: url(//unsplash.it/1000/1000);
+   background-color: #AAA;
+  background-blend-mode: multiply;
+  background-size: cover;
+  display: grid
+  display: grid;
+  padding: 0px;
+  place-items: center;
+}
+*/
+
+.intro {
+  margin: 30 auto;
+  background: black;
+  text-align: center;
+  padding: 50vh 0;
+  width: 100vw;
+  height: 100vh;
+ }
+
+.fill {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    padding: 10vh;
+}
+.fill img {
+    width: 65%;
+    height: 75%;
+    top: 13%;
+    left: 35%;
+    position: absolute;
+    object-fit: fill;
+}
+
+.typing-container{
+    position: absolute;
+    text-align: left;
+  	top: 99%;
+  	right: 50%;
+    width: 100vw;
+  	transform: translate(50%,-50%);
+  	color: white;
+  	max-width: 100%;
+    height: 100%;
+  	padding: 5em 5em;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    font-family: 'Press Start 2P', cursive;
+    color: var(--highlight);
+}
+
+.text-primary{
+  color: white;
+}
+
+.about {
+  margin: 0;
+  color: white;
+  padding-top: 20vh;
+  position:relative;
+  background: #000000;
+  overflow: auto;
+}
+
+.About-title {
+  margin: 0px;
+}
+
+#about-container {
+  width: 80%;
+  height: 100%;
+  float: right;
+  margin: 0;
+}
+
+#aboutimg {
+  margin-right: 50px;
+  float: left;
+  width: 300px;
+  height: 400px;
+  vertical-align: middle;
+  border-radius: 50%;
+}
+
+.row {
+  margin: 0;
+}
+
+.col-md-4 {
+  margin: 0;
+  font-family: 'Saira', sans-serif;
+}
+
+
+.div_title{
+  font-family: 'Press Start 2P', cursive;
+  color: var(--highlight);
+  font-size: 40px;
+}
+
+.small_title{
+  font-family: 'Press Start 2P', cursive;
+  color: #D661E2;
+}
+
+.work {
+  padding-top: 15vh;
+  margin: 0 auto;
+  color: white;
+  background: #000000;
+}
+
+.container {
+  width: 80%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.contact {
+  padding-top: 15vh;
+  padding-bottom: 15vh;
+  margin: 0 auto;
+  width: 100vw;
+  background: #000000;
+  color: white;
+}
+
+.resume {
+  padding-bottom: 10vh;
+  margin: 0 auto;
+  width: 100vw;
+  color: white;
+}
+
+.media {
+  padding: 10vh 0;
+  margin: 0 auto;
+  width: 100vw;
+  color: white;
+}
+
+#resumepdf {
+  position: relative;
+  text-decoration: none;
+  width: 40%;
+}
+
+#resumetalk {
+  position: absolute;
+  text-decoration: none;
+}
+
+footer {
+  margin: 0 auto;
+  padding: 5px 0;
+  text-align: center;
+  background: var(--highlight);
+  color: white;
+  font-family: 'Saira', sans-serif;
+}
+
+.projects{
+  margin: 0 auto;
+  top: 50px;
+}
+
+
+.fire{
+  background-color: red;
+  color: white;
+  font-size: 16px;
+  text-align: center;
+  padding: 10 auto;
+  position: absolute;
+  z-index: 200;
+}
+
+#tvlayoutcanvas{
+  margin: 10px auto;
+  position: relative;
+  height: 800px;
+  width: 100vw;
+}
+
+#tvlayoutcanvas2{
+  margin: 0 auto;
+  position: relative;
+  height: 3500px;
+}
+
+.ui{
+  background-color: green;
+  color: white;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  padding: 10 auto;
+  position: absolute;
+  transition: .5s ease;
+  z-index: 200;
+  width: 10rem;
+  border-style: solid;
+  border-width: medium;
+  border-color: black;
+}
+
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 80px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 15%;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-google {
+  background: #dd4b39;
+  color: white;
+}
+
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+.fa-youtube {
+  background: #bb0000;
+  color: white;
+}
+
+.fa-soundcloud {
+  background: #ff7700;
+  color: white;
+}
+
+.fa-instagram {
+  background: #125688;
+  color: white;
+}
+
+.btn {
+  background-color: #D661E2;
+  border: none;
+  color: white;
+  padding: 12px 30px;
+  cursor: pointer;
+  font-size: 20px;
+  text-align: center;
+  text-decoration: none;
+}
+
+/* Darker background on mouse-over */
+.btn:hover {
+  background-color: RoyalBlue;
+}
