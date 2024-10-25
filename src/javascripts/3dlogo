@@ -1,6 +1,9 @@
 import * as THREE from 'three';
 import { OBJLoader } from 'three/addons/loaders/OBJLoader.js';
 
+import logoOBJ from '/src/models/AW.obj';
+
+
 
 (function logo(){
 
@@ -87,7 +90,7 @@ function initLights() {
 
 function initMesh() {
     var loader = new OBJLoader();
-    loader.load('src/models/AW.obj', function(geometry, materials) {
+    loader.load(logoOBJ, function(geometry, materials) {
         awGroup = new THREE.Object3D();
         //material = new THREE.MeshNormalMaterial();
         //geometry.children[0].material.wireframe = true;

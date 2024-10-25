@@ -14,6 +14,8 @@ import { ShaderPass } from 'three/examples/jsm/postprocessing/ShaderPass.js';
 //import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
 
+import yellowtvscreen from '/src/models/yellowtvscreen.obj';
+import Hammer03mtl from '/src/models/Hammer03.mtl';
 
 
 //import { CSS3DRenderer } from 'three-css3drenderer';
@@ -221,7 +223,7 @@ function loadTVs() {
   var index = 0;
   var rotx = 0.3;
   var loader = new OBJLoader();
-  loader.load('src/models/yellowtvscreen.obj', function(object) {
+  loader.load(yellowtvscreen, function(object) {
     screenGroup = new THREE.Object3D();
     tvGroup = new THREE.Object3D();
     var index = 0;
@@ -791,7 +793,7 @@ function initLights() {
 
 function initHammerMesh() {
   var mtlLoader = new MTLLoader();
-  mtlLoader.load('src/models/Hammer03.mtl', function (materials) {
+  mtlLoader.load(Hammer03mtl, function (materials) {
       tvGroup = new THREE.Object3D();
       materials.preload();
       var loader = new OBJLoader();
