@@ -15,14 +15,15 @@ import { ShaderPass } from 'three/examples/jsm/postprocessing/ShaderPass.js';
 import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
 
 import yellowtvscreen from '/src/models/yellowtvscreen.obj';
+import txHammer from '/src/models/txHammer.jpg';
 import Hammer03mtl from '/src/models/Hammer03.mtl';
 import Hammer03OBJ from '/src/models/Hammer03.obj';
 import bluettvMTL from '/src/models/bluetv.mtl';
 import bluetvOBJ from '/src/models/bluetv.obj';
 import yellowtvMTL from '/src/models/yellowtv.mtl';
 import yellowtvOBJ from '/src/models/yellowtv.obj';
-import Hammer_tex from '/src/models/Hammer_tex.jpg';
-import txHammer from '/src/models/txHammer.jpg';
+//import Hammer_tex from '/src/models/Hammer_tex.jpg';
+//import txHammer from '/src/models/txHammer.jpg';
 
 
 //import { CSS3DRenderer } from 'three-css3drenderer';
